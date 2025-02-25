@@ -8,7 +8,9 @@ import Image from "next/image";
 export default function SkillsSection() {
   // ✅ Scroll Reveal Animation
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth > 768) {
+    const initScrollReveal = async () => {
+      if (typeof window !== "undefined" && window.innerWidth > 768) {
+        const ScrollReveal = (await import("scrollreveal")).default;
       const sr = ScrollReveal({
         origin: "bottom",
         distance: "60px",
@@ -19,7 +21,10 @@ export default function SkillsSection() {
       sr.reveal(".skills-title", { delay: 200 });
       sr.reveal(".skills-grid .skill-card", { interval: 150 });
     }
-  }, []);
+  };
+
+  initScrollReveal();
+}, []);
 
   return (
     <section

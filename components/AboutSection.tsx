@@ -20,7 +20,9 @@ export default function AboutSection() {
 
   // ✅ Add Scroll Reveal Animations
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth > 768) {
+    const initScrollReveal = async () => {
+      if (typeof window !== "undefined" && window.innerWidth > 768) {
+        const ScrollReveal = (await import("scrollreveal")).default;
       const sr = ScrollReveal({
         origin: "top",
         distance: "70px",
@@ -32,7 +34,10 @@ export default function AboutSection() {
       sr.reveal(".about-image", { delay: 400 });
       sr.reveal(".about-content", { delay: 600 });
     }
-  }, []);
+  };
+
+  initScrollReveal();
+}, []);
 
   return (
     <section className="bg-white py-10 sm:py-14 lg:py-16" id="about">

@@ -11,17 +11,23 @@ const ProjectsPage = () => {
   const [projects, setProjects] = useState(projectsData);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth > 768) {
-      const sr = ScrollReveal({
-        origin: "top",
-        distance: "80px",
-        duration: 1000,
-        reset: true,
-      });
+    const initScrollReveal = async () => {
+      if (typeof window !== "undefined" && window.innerWidth > 768) {
+        const ScrollReveal = (await import("scrollreveal")).default;
+        const sr = ScrollReveal({
+          origin: "top",
+          distance: "80px",
+          duration: 1000,
+          reset: true,
+        });
 
       sr.reveal(".work .project-card", { interval: 200 });
     }
-  }, []);
+  };
+
+  initScrollReveal();
+}, []);
+
 
   useEffect(() => {
     if (filter === "*") {
