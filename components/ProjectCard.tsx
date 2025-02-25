@@ -4,7 +4,6 @@ import Image from "next/image";
 import { FaEye, FaCode } from "react-icons/fa";
 import type { Project } from "@/lib/types";
 import { useEffect, useRef } from "react";
-import VanillaTilt from "vanilla-tilt";
 
 interface ProjectCardProps {
   project: Project;
