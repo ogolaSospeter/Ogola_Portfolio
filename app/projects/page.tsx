@@ -39,7 +39,7 @@ const ProjectsPage = () => {
 
   const categories = [
     { id: "*", name: "All Projects" },
-    { id: "BasicWebDevelopment", name: "Basic Web Dev" },
+    { id: "BasicWebDevelopment", name: "Web Apps" },
     { id: "AndroidApp", name: "Android App" },
     { id: "RoboticsandAI", name: "Robotics & AI/ML" },
   ];
