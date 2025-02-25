@@ -142,54 +142,66 @@ export const projectsData = [
 
 export const skillsData = [{
     "name": "Python",
-    "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+    "icon": "/skills/python.png"
 },
 {
     "name": "Firebase",
-    "icon": "https://img.icons8.com/color/48/000000/firebase.png"
+    "icon": "/skills/firebase.png"
+    // "icon": "https://img.icons8.com/color/48/000000/firebase.png"
 },
 {
     "name": "Android",
-    "icon": "https://img.icons8.com/fluency/48/000000/android-os.png"
+    "icon": "/skills/android.png"
+    // "icon": "https://img.icons8.com/fluency/48/000000/android-os.png"
 },
 {
     "name": "Kotlin",
-    "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
+    "icon": "/skills/kotlin.png"
+    // "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
 },
 {
     "name": "Flutter",
-    "icon": "https://img.icons8.com/color/48/000000/flutter.png"
+    "icon": "/skills/flutter.png"
+    // "icon": "https://img.icons8.com/color/48/000000/flutter.png"
 },
 {
     "name": "MaterialUI",
-    "icon": "https://img.icons8.com/color/48/000000/material-ui.png"
+    "icon": "/skills/materialui.png"
+    // "icon": "https://img.icons8.com/color/48/000000/material-ui.png"
 },
 {
     "name": "Bootstrap",
-    "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
+    "icon": "/skills/bootstrap.png"
+    // "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
 },
 {
     "name": "HTML5",
-    "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
+    "icon": "/skills/html-5.png"
+    // "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
 },
 {
     "name": "CSS3",
-    "icon": "https://img.icons8.com/color/48/000000/css3.png"
+    "icon": "/skills/css3.png"
+    // "icon": "https://img.icons8.com/color/48/000000/css3.png"
 },
 {
     "name": "JavaScript",
-    "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
+    "icon": "/skills/javascript.png"
+    // "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
 },
 {
     "name": "MySQL",
-    "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    "icon": "/skills/mysql.png"
+    // "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
 },
 {
     "name": "Git VCS",
-    "icon": "https://img.icons8.com/color/48/000000/git.png"
+    "icon": "/skills/git.png"
+    // "icon": "https://img.icons8.com/color/48/000000/git.png"
 },
 {
     "name": "GitHub",
-    "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
+    "icon": "/skills/github.png"
+    // "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
 }
 ]

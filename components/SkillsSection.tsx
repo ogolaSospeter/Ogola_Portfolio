@@ -62,6 +62,8 @@ export default function SkillsSection() {
                   <Image
                     src={skill.icon}
                     alt={skill.name}
+                    width={64} // Set a default width
+                    height={64} // Set a default height
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
                   />
                   <span className="text-lg sm:text-xl font-medium font-poppins text-white text-center">
