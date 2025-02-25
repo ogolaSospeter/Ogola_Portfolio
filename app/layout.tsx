@@ -1,18 +1,11 @@
-import dynamic from "next/dynamic";
-
-const DisableRightClick = dynamic(() => import("@/components/DisableRightClick"), { ssr: false });
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
-const FloatingContact = dynamic(() => import("@/components/FloatingContact"), { ssr: false });
-const ScrollToTop = dynamic(() => import("@/components/ScrollToTop"), { ssr: false });
-const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 import type { Metadata } from "next";
 import { Poppins, Nunito } from "next/font/google";
 import "./globals.css";
-// import DisableRightClick from "@/components/DisableRightClick";
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// import FloatingContact from "@/components/FloatingContact";
-// import ScrollToTop from "@/components/ScrollToTop";
+import DisableRightClick from "@/components/DisableRightClick";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // Configure fonts
 const poppins = Poppins({

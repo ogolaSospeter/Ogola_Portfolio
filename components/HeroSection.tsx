@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub} from "react-icons/fa";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
-import ScrollReveal from "scrollreveal";
 
 export default function HeroSection() {
   const [typeEffect] = useTypewriter({
@@ -28,7 +27,9 @@ export default function HeroSection() {
 
   // ✅ Add Scroll Reveal Effect on Load
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth > 768) {
+    const initScrollReveal = async () =>{
+      const ScrollReveal = (await import("scrollreveal")).default;
+      if (typeof window !== "undefined" && window.innerWidth > 768) {
       const sr = ScrollReveal({
         origin: "top",
         distance: "60px",
@@ -42,6 +43,8 @@ export default function HeroSection() {
       sr.reveal(".hero-socials", { delay: 800, interval: 100 });
       sr.reveal(".hero-image", { delay: 1000 });
     }
+  }
+  initScrollReveal();
   }, []);
 
   return (

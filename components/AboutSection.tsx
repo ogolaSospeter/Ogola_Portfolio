@@ -4,16 +4,18 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
-import VanillaTilt from "vanilla-tilt";
-import ScrollReveal from "scrollreveal";
 
 export default function AboutSection() {
   // ✅ Initialize Tilt Effect for Image
   useEffect(() => {
+    const initTilt = async () => {
+    const VanillaTilt = (await import("vanilla-tilt")).default;
     const elements = document.querySelectorAll<HTMLElement>(".tilt");
     elements.forEach((element) => {
       VanillaTilt.init(element, { max: 15 });
     });
+  }
+  initTilt();
   }, []);
 
   // ✅ Add Scroll Reveal Animations

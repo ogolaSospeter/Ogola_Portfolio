@@ -14,9 +14,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (cardRef.current) {
-      VanillaTilt.init(cardRef.current, { max: 15 });
-    }
+    // Dynamically import VanillaTilt
+    const initTilt = async () => {
+      if (typeof window !== "undefined" && cardRef.current) {
+        const VanillaTilt = (await import("vanilla-tilt")).default;
+        VanillaTilt.init(cardRef.current, { max: 15 });
+      }
+    };
+    initTilt();
   }, []);
 
   return (

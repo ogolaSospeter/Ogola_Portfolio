@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { FaLaptopCode } from "react-icons/fa";
 import { skillsData } from "@/lib/data";
-import ScrollReveal from "scrollreveal";
 import Image from "next/image";
 
 export default function SkillsSection() {
