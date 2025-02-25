@@ -5,7 +5,6 @@ import Link from "next/link";
 import { FaLaptopCode, FaArrowLeft } from "react-icons/fa";
 import ProjectCard from "@/components/ProjectCard";
 import { projectsData } from "@/lib/data";
-import ScrollReveal from "scrollreveal";
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState("*");
