@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaTwitter, FaTelegram } from "react-icons/fa";
+import { FaLinkedin, FaGithub} from "react-icons/fa";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
 import ScrollReveal from "scrollreveal";
 

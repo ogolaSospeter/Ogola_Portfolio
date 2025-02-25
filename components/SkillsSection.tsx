@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { FaLaptopCode } from "react-icons/fa";
 import { skillsData } from "@/lib/data";
 import ScrollReveal from "scrollreveal";
+import Image from "next/image";
 
 export default function SkillsSection() {
   // ✅ Scroll Reveal Animation
@@ -54,7 +55,7 @@ export default function SkillsSection() {
                 "
               >
                 <div className="flex flex-col items-center gap-4 mt-4">
-                  <img
+                  <Image
                     src={skill.icon}
                     alt={skill.name}
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain"

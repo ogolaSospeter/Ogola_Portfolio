@@ -8,8 +8,6 @@ import {
   FaMapMarkerAlt,
   FaLinkedin,
   FaGithub,
-  FaTwitter,
-  FaTelegram,
 } from "react-icons/fa";
 import { MdWhatsapp } from "react-icons/md";
 
@@ -23,7 +21,7 @@ const Footer = () => {
             Developer Ogola Portfolio
           </h3>
           <p className="text-[clamp(1rem,1.2vw,1.3rem)] text-gray-300">
-            Thank you for visiting my personal portfolio website. Let's connect!
+            Thank you for visiting my personal portfolio website. Let&apos;s connect!
           </p>
         </div>
 

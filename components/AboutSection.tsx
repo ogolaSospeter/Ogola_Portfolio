@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
-// @ts-ignore
 import VanillaTilt from "vanilla-tilt";
 import ScrollReveal from "scrollreveal";
 
