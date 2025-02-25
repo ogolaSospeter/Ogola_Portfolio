@@ -145,63 +145,55 @@ export const skillsData = [{
     "icon": "/skills/python.png"
 },
 {
-    "name": "Firebase",
-    "icon": "/skills/firebase.png"
-    // "icon": "https://img.icons8.com/color/48/000000/firebase.png"
-},
-{
-    "name": "Android",
-    "icon": "/skills/android.png"
-    // "icon": "https://img.icons8.com/fluency/48/000000/android-os.png"
+    "name": "Flutter",
+    "icon": "/skills/flutter.png"
 },
 {
     "name": "Kotlin",
     "icon": "/skills/kotlin.png"
-    // "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
 },
 {
-    "name": "Flutter",
-    "icon": "/skills/flutter.png"
-    // "icon": "https://img.icons8.com/color/48/000000/flutter.png"
+    "name": "Firebase",
+    "icon": "/skills/firebase.png"
+},
+{
+    "name": "Android",
+    "icon": "/skills/android.png"
 },
 {
     "name": "MaterialUI",
     "icon": "/skills/materialui.png"
-    // "icon": "https://img.icons8.com/color/48/000000/material-ui.png"
-},
-{
-    "name": "Bootstrap",
-    "icon": "/skills/bootstrap.png"
-    // "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
 },
 {
     "name": "HTML5",
     "icon": "/skills/html-5.png"
-    // "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
 },
 {
     "name": "CSS3",
     "icon": "/skills/css3.png"
-    // "icon": "https://img.icons8.com/color/48/000000/css3.png"
 },
 {
     "name": "JavaScript",
     "icon": "/skills/javascript.png"
-    // "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
+},
+{
+    "name": "Bootstrap",
+    "icon": "/skills/bootstrap.png"
+},
+{
+    "name": "Flask",
+    "icon": "/skills/flask.png"
 },
 {
     "name": "MySQL",
     "icon": "/skills/mysql.png"
-    // "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
 },
 {
     "name": "Git VCS",
     "icon": "/skills/git.png"
-    // "icon": "https://img.icons8.com/color/48/000000/git.png"
 },
 {
     "name": "GitHub",
     "icon": "/skills/github.png"
-    // "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
 }
 ]
