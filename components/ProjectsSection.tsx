@@ -6,6 +6,9 @@ import { FaLaptopCode, FaArrowRight } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "@/lib/data";
 
+//Print the projectsdata to the console
+console.log("Passed projects", projectsData);
+
 export default function ProjectsSection() {
   useEffect(() => {
     const initScrollReveal = async () => {
@@ -44,6 +47,8 @@ export default function ProjectsSection() {
             <div key={index} className="work-item">
               <ProjectCard project={project} />
             </div>
+           
+            
           ))}
         </div>
 

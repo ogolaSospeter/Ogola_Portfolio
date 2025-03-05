@@ -52,7 +52,6 @@ export const projectsData = [
             "code": "#"
         }
     },
-
     {
         "name": "JKUSA Election Voting System",
         "description": "As an academic project during the 3.1 Semester, in a team of 5, we developed an election system that would help aleviate the problems around the elections.",
@@ -137,7 +136,7 @@ export const projectsData = [
             "view": "#",
             "code": "#"
         }
-    }
+    },
 ]
 
 export const skillsData = [{

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { FaEye, FaCode } from "react-icons/fa";
 import type { Project } from "@/lib/types";
 import { useEffect, useRef } from "react";
+// @ts-ignore
+import VanillaTilt from "vanilla-tilt";
 
 interface ProjectCardProps {
   project: Project;
@@ -13,14 +15,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Dynamically import VanillaTilt
-    const initTilt = async () => {
-      if (typeof window !== "undefined" && cardRef.current) {
-        const VanillaTilt = (await import("vanilla-tilt")).default;
-        VanillaTilt.init(cardRef.current, { max: 15 });
-      }
-    };
-    initTilt();
+    if (cardRef.current) {
+      VanillaTilt.init(cardRef.current, { max: 15 });
+    }
   }, []);
 
   return (
@@ -29,7 +26,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="
         relative
         w-full
-        h-90
+        h-80
         rounded-lg
         shadow-md
         overflow-hidden
