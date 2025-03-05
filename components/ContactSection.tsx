@@ -44,7 +44,6 @@ const ContactSection = () => {
         e.currentTarget as HTMLFormElement,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-s
       if (response.status === 200) {
         alert("Thank you for Leaving us a message. We will get back to you soon!\nKeep an eye on your inbox.");
         (e.target as HTMLFormElement).reset();
