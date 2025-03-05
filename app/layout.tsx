@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "portfolio website",
   ],
   icons: {
-    icon: "/favhand.ico",
+    icon: "/favhand.jpg",
   },
 };
 

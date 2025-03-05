@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="
         relative
         w-full
-        h-80
+        h-90
         rounded-lg
         shadow-md
         overflow-hidden
