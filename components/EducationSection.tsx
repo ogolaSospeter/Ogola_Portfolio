@@ -38,7 +38,7 @@ const educationData = [
     title: "Kenya Certificate of Secondary Education",
     school: "Homabay High School",
     period: "2016-2019",
-    status: { text: "A- [79 Points]", color: "red" }
+    status: { text: "Completed [A- [79 Points]]", color: "rgb(1, 90, 20)" }
   }
 ];
 
