@@ -10,7 +10,7 @@ const educationData = [
     title: "Bachelor of Science in Computer Technology",
     school: "Jomo Kenyatta University of Agriculture and Technology || JKUAT",
     period: "2021-2025",
-    status: { text: "Pursuing", color: "rgb(255, 136, 0)" }
+    status: { text: "Completed", color: "rgb(1, 90, 20)" }
   },
   {
     image: "/educat/Aspire.png",
