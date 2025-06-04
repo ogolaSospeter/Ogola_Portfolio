@@ -29,6 +29,30 @@ export const experienceData:Experience[] = [{
 
 export const projectsData = [
     {
+        "name": "SmartTechFarm - Smart Tomato Farm System",
+        "description": "The system is developed on 3 key technological modules of Machine Learning, Internet of Things (IoT), and Natural Language Processing. The system supports disease detection through image capturing, virtual chatbot assistance, sensor data monitoring as well as automated management practises generation. ",
+        "image": "/projects/smarttechfarm.png",
+        "category": "AndroidApp",
+        "image1": "/projects/smartfarm.png",
+        "link": "https://github.com/ogolaSospeter/Smart-Tech-Farm",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
+        "name": "SmartHealth - Health Management System",
+        "description": "A web application that is aimed at helping healthcare professionals manage client information and enroll them into various health programs such as HIV, TB, and Malaria. The system also simplifies the process of client registration, program creation, enrollment tracking, and profile access — all through an easy-to-use interface and accessible APIs.",
+        "image": "/projects/smarthealth.png",
+        "category": "BasicWebDevelopment",
+        "image1": "/projects/smarthealth.png",
+        "link": "https://github.com/ogolaSospeter/SmartHealth",
+        "links": {
+            "view": "#",
+            "code": "#"
+        }
+    },
+    {
         "name": "Personal Expense Tracker",
         "description": "This is a Kotlin-based Android application designed to help users efficiently manage their finances by tracking income and expenses. It features secure authentication, intuitive transaction categorization, and insightful visualizations to enhance financial awareness and budgeting.",
         "image": "/projects/expense_tracker.png",
