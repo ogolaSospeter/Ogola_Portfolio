@@ -48,7 +48,7 @@ export const projectsData = [
         "image1": "/projects/smarthealth.png",
         "link": "https://github.com/ogolaSospeter/SmartHealth",
         "links": {
-            "view": "#",
+            "view": "https://smarthealth-afwc.onrender.com/",
             "code": "#"
         }
     },
