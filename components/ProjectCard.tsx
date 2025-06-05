@@ -15,7 +15,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         group
         relative
         w-full
-        h-[450px]
         rounded-xl
         overflow-hidden
         bg-white
@@ -24,7 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         duration-300
         hover:shadow-2xl
         hover:scale-[1.02]
-        py-4
+        py-5
       "
     >
       {/* Image Container */}
@@ -41,7 +40,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 p-6 pb-[calc(1.5rem+10px)]">
         {/* Category Tag */}
         <span className="inline-block px-3 py-1 text-xs font-semibold text-[#026969] bg-[#026969]/10 rounded-full mb-3">
           {project.category}
