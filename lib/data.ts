@@ -1,29 +1,42 @@
 import { Experience } from "./types"
 
-export const experienceData:Experience[] = [{
+export const experienceData:Experience[] = [
+    {
+        "company": "AENI International - Kenya",
+        "role": "Software Engineer | Internship || Volunteership",
+        "duration": "May 2025 - Current || Ongoing",
+        "overview": "Involved in supporting the development of a Curriculum for Mentorship of youths, as well as supporting all the technical operations."
+
+    },
+    {
     "company": "KCB Bank Group - Kenya",
     "role": "Product Development | Internship",
-    "duration": "May 2024 - August 2024"
+    "duration": "May 2024 - August 2024",
+    "overview":"Part of the Product Development team, involved in the review of the super app, as well as systems review and documentation for the new product. Also undertook legal and security review and stakeholder engagement for the new product.",
 },
 {
     "company": "Extern Labs",
     "role": "Market Research Analyst | Externship",
-    "duration": "May 2024 - June 2024"
+    "duration": "May 2024 - June 2024",
+    "overview": "Conducted market research and analysis to identify trends and opportunities in the tech industry, focusing on emerging technologies and their potential applications."
 },
 {
     "company": "YSK Corporation",
     "role": "Exhibition Judge | Associate",
-    "duration": "July 2024"
+    "duration": "July 2024",
+    "overview": "Served as a judge for the YSK Corporation Exhibition, evaluating innovative projects and providing feedback to participants."
 },
 {
     "company": "JKUAT SCIT",
     "role": "Web Developer, Designer | Internship",
-    "duration": "May 2023 - August 2023"
+    "duration": "May 2023 - August 2023",
+    "overview": "Had hands on experience, supporting the department, as well as working on some projects during the period. Worked on an election system aimed as a solution to the problems around the elections in the university. ",
 },
 {
     "company": "JKUAT SCIT",
     "role": "Database Administrator | Internship",
-    "duration": "July 2023 - August 2023"
+    "duration": "July 2023 - August 2023",
+    "overview": "Worked as a Database Administrator, supporting the department in managing and maintaining databases, ensuring data integrity and security."
 }
 ]
 

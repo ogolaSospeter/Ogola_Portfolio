@@ -87,8 +87,8 @@ const ExperiencePage = () => {
                     <h2 className="text-xl font-bold mb-2 text-black">{exp.company}</h2>
                     <h3 className="text-lg mb-2 text-black">{exp.role}</h3>
                     <p className="text-base text-black">{exp.duration}</p>
-                    {exp.description && (
-                      <p className="text-sm text-gray-800 mt-2 leading-relaxed">{exp.description}</p>
+                    {exp.overview && (
+                      <p className="text-sm text-gray-800 mt-2 leading-relaxed">{exp.overview}</p>
                     )}
                   </div>
                 </div>

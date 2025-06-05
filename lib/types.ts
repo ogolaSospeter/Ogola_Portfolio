@@ -17,6 +17,7 @@ export interface Experience {
     role: string;
     duration: string;  
     description?: string;
+    overview: string;
 }
 
 export interface ExperienceWithSide extends Experience{

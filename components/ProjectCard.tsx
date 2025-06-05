@@ -1,94 +1,111 @@
 "use client";
 
 import Image from "next/image";
-import { FaEye, FaCode } from "react-icons/fa";
+import { FaEye, FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import type { Project } from "@/lib/types";
-import { useEffect, useRef } from "react";
-// @ts-ignore
-import VanillaTilt from "vanilla-tilt";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (cardRef.current) {
-      VanillaTilt.init(cardRef.current, { max: 15 });
-    }
-  }, []);
-
   return (
     <div
-      ref={cardRef}
       className="
+        group
         relative
         w-full
-        h-80
-        rounded-lg
-        shadow-md
+        h-[450px]
+        rounded-xl
         overflow-hidden
-        group
-       
+        bg-white
+        shadow-lg
+        transition-all
+        duration-300
+        hover:shadow-2xl
         hover:scale-[1.02]
+        py-4
       "
     >
-      {/* Background Image */}
-      <Image
-        src={project.image}
-        alt={project.name}
-        fill
-        className="object-cover"
-        draggable={false}
-      />
+      {/* Image Container */}
+      <div className="relative w-full h-48 overflow-hidden ">
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          className="object-contain transition-transform duration-500 group-hover:scale-110"
+          draggable={false}
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
 
-      {/* Overlay Content */}
-      <div
-        className="
-          absolute inset-x-0
-          transition-all duration-300
-          bg-white/90
-          top-[85%] group-hover:top-[10%]
-          h-full
-        "
-      >
-        {/* Title Bar */}
-        <div className="flex justify-between items-center h-16 px-4 bg-[#026969]">
-          <h3 className="text-xl text-white font-semibold">{project.name}</h3>
-        </div>
+      {/* Content */}
+      <div className="p-6">
+        {/* Category Tag */}
+        <span className="inline-block px-3 py-1 text-xs font-semibold text-[#026969] bg-[#026969]/10 rounded-full mb-3">
+          {project.category}
+        </span>
 
-        {/* Description & Buttons */}
-        <div className="m-4 flex flex-col justify-center">
-          <p className="text-sm mb-6">{project.description}</p>
-          <div className="flex items-center gap-4">
-            <a
-              href={project.links.view}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                inline-flex items-center px-5 py-2 
-                rounded-lg bg-black text-white text-base
-                hover:bg-gray-800 transition-colors
-              "
-            >
-              <FaEye className="mr-2" /> View
-            </a>
-            <a
-              href={project.links.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                inline-flex items-center px-5 py-2 
-                rounded-lg bg-black text-white text-base
-                hover:bg-gray-800 transition-colors
-              "
-            >
-              <FaCode className="mr-2" /> Code
-            </a>
-          </div>
+        {/* Title */}
+        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-1">
+          {project.name}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm mb-6 line-clamp-3">
+          {project.description}
+        </p>
+
+        {/* Buttons */}
+        <div className="flex items-center gap-3">
+          <a
+            href={project.links.view}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              flex-1
+              inline-flex items-center justify-center
+              px-4 py-2.5
+              rounded-lg
+              bg-[#026969]
+              text-white
+              text-sm font-medium
+              transition-all
+              duration-300
+              hover:bg-[#015555]
+              hover:shadow-md
+            "
+          >
+            <FaEye className="mr-2" /> View Project
+          </a>
+          <a
+            href={project.links.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              flex-1
+              inline-flex items-center justify-center
+              px-4 py-2.5
+              rounded-lg
+              border-2 border-[#026969]
+              text-[#026969]
+              text-sm font-medium
+              transition-all
+              duration-300
+              hover:bg-[#026969]
+              hover:text-white
+              hover:shadow-md
+            "
+          >
+            <FaCode className="mr-2" /> View Code
+          </a>
         </div>
+      </div>
+
+      {/* External Link Indicator */}
+      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <FaExternalLinkAlt className="text-white text-xl" />
       </div>
     </div>
   );

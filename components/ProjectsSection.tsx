@@ -6,8 +6,6 @@ import { FaLaptopCode, FaArrowRight } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "@/lib/data";
 
-//Print the projectsdata to the console
-console.log("Passed projects", projectsData);
 
 export default function ProjectsSection() {
   useEffect(() => {
@@ -15,8 +13,8 @@ export default function ProjectsSection() {
       if (typeof window !== "undefined" && window.innerWidth > 768) {
         const ScrollReveal = (await import("scrollreveal")).default;
         const sr = ScrollReveal({
-          origin: "top",
-          distance: "80px",
+          origin: "bottom",
+          distance: "60px",
           duration: 1000,
           reset: true,
         });
@@ -31,40 +29,57 @@ export default function ProjectsSection() {
   return (
     <section
       id="work"
-      className="bg-gradient-to-b from-[#005f6b] to-[#387888] py-16"
+      className="relative py-24 bg-gradient-to-b from-[#005f6b] to-[#387888] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Title */}
-        <h2 className="text-4xl font-bold text-center text-white mb-4">
-          <FaLaptopCode className="inline-block mr-2" />
-          Projects{" "}
-          <span className="text-[rgb(255,230,0)]">Done</span>
-        </h2>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      </div>
 
-        {/* Grid of Project Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 my-8">
-          {projectsData.slice(0, 5).map((project, index) => (
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            <FaLaptopCode className="inline-block mr-2" />
+            Featured <span className="text-[rgb(255,230,0)]">Projects</span>
+          </h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            A showcase of my recent work and personal projects. Each project represents a unique challenge and solution.
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsData.slice(0, 6).map((project, index) => (
             <div key={index} className="work-item">
               <ProjectCard project={project} />
             </div>
-           
-            
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-16">
           <Link
             href="/projects"
             className="
-              inline-flex items-center px-6 py-3
-              rounded-full border-2 border-white text-white
-              hover:bg-white hover:text-black
-              transition-colors duration-500 group
+              group
+              inline-flex items-center gap-2
+              px-8 py-4
+              rounded-full
+              bg-white/10
+              backdrop-blur-sm
+              text-white
+              text-lg font-semibold
+              border border-white/20
+              transition-all
+              duration-300
+              hover:bg-white
+              hover:text-[#005f6b]
+              hover:shadow-lg
             "
           >
-            <span className="text-xl font-bold font-nunito">View All</span>
-            <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-2" />
+            <span>View All Projects</span>
+            <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

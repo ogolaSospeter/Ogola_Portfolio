@@ -56,6 +56,10 @@ export default function ExperienceSection() {
                   <h2 className="text-lg font-bold mb-1 text-black">{exp.company}</h2>
                   <h3 className="text-base mb-1 text-black">{exp.role}</h3>
                   <p className="text-sm text-black">{exp.duration}</p>
+                  <p className="text-sm text-black mt-2">Overview</p>
+                  <p className="text-sm text-black mt-1">
+                    {exp.overview }
+                  </p>
                 </div>
               </div>
             </div>
