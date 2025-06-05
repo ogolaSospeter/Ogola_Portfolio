@@ -105,7 +105,7 @@ export default function AboutSection() {
 
             {/* ✅ Resume Button */}
             <Link
-              href="/resume.pdf"
+              href="/OGOLA-SOSPETER-OKONGO_RESUME.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="
