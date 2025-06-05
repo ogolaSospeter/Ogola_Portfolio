@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   FaHeadset,
@@ -13,6 +13,11 @@ import {
 import { init, sendForm } from "@emailjs/browser";
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [alertType, setAlertType] = useState<"success" | "error">("success");
+
   useEffect(() => {
     const initScrollReveal = async () => {
       if (typeof window !== "undefined" && window.innerWidth > 768) {
@@ -28,14 +33,51 @@ const ContactSection = () => {
         sr.reveal(".contact .container .form-group", { delay: 400 });
       }
     };
+    let timer: NodeJS.Timeout;
+    if (showAlert) {
+      timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
 
     initScrollReveal();
-  }, []);
+  }, [showAlert]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setShowAlert(false);
 
     try {
+      const phone = (e.target as HTMLFormElement).phone.value;
+      const name = (e.target as HTMLFormElement).name;
+      //check if phone is number
+      if (phone && isNaN(Number(phone))) {
+        setAlertType("error");
+        setAlertMessage("Please enter a valid phone number.");
+        setShowAlert(true);
+        setIsSubmitting(false);
+        return;
+      }
+      //check that phone is exactly 10 digits if provided
+      if (phone && phone.length !== 10) {
+        setAlertType("error");
+        setAlertMessage("Phone number must be exactly 10 digits.");
+        setShowAlert(true);
+        setIsSubmitting(false);
+        return;
+      }
+      //The name field should not contain numbers
+      if (name && /\d/.test(name)) {
+        setAlertType("error");
+        setAlertMessage("Name should not contain numbers.");
+        setShowAlert(true);
+        setIsSubmitting(false);
+        return;
+      }
       init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
       const response = await sendForm(
@@ -44,18 +86,62 @@ const ContactSection = () => {
         e.currentTarget as HTMLFormElement,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
+      
       if (response.status === 200) {
-        alert("Thank you for Leaving us a message. We will get back to you soon!\nKeep an eye on your inbox.");
+        setAlertType("success");
+        setAlertMessage("Thank you for leaving us a message. We will get back to you soon! Keep an eye on your inbox.");
+        
         (e.target as HTMLFormElement).reset();
       }
     } catch (error) {
       console.error("FAILED...", error);
-      alert(`Form Submission Failed due to the error: ${JSON.stringify(error)}`);
+      setAlertType("error");
+      setAlertMessage("Form submission failed. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+      setShowAlert(true);
     }
   };
 
   return (
     <section className="min-h-[60vh] bg-[#e5ecfb] py-16" id="contact">
+      {/* Alert Message */}
+{showAlert && (
+  <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
+    <div className={`w-[350px] rounded-lg shadow-lg overflow-hidden ${
+      alertType === "success" 
+        ? "bg-green-100 border border-green-400" 
+        : "bg-red-100 border border-red-400"
+    }`}>
+      <div className="p-4">
+        <div className="flex items-center gap-5">
+          {alertType === "success" ? (
+            <Image
+              src="https://cdn-icons-png.flaticon.com/128/5709/5709755.png"
+              alt="Success"
+              width={40}
+              height={40}
+              className="flex-shrink-0"
+            />
+          ) : (
+            <Image
+              src="https://cdn-icons-png.flaticon.com/128/2228/2228040.png"
+              alt="Error"
+              width={40}
+              height={40}
+              className="flex-shrink-0"
+            />
+          )}
+          <p className={`text-sm font-medium ${
+            alertType === "success" ? "text-green-700" : "text-red-700"
+          }`}>
+            {alertMessage}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
       {/* Section Heading */}
       <h2 className="text-center text-[#2506ad] text-[clamp(1.8rem, 2vw, 2.2rem)] font-bold mb-8">
         <FaHeadset className="inline-block mr-2" /> Get in{" "}
@@ -118,16 +204,30 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Submit Button - Centers on Small Screens, Proper Rounded Corners */}
-            <div className="flex justify-center md:justify-start mt-6">
-              <button
-                type="submit"
-                className="px-6 py-3 text-lg text-white bg-[#2506ad] rounded-lg hover:bg-[#421cecf5] shadow-lg shadow-blue-600/40 transition-all duration-300 font-nunito group"
-              >
-                Submit{" "}
-                <FaPaperPlane className="inline-block ml-2 group-hover:translate-x-2 transition-transform" />
-              </button>
+            
+                 {/* Submit Button */}
+      <div className="flex justify-center md:justify-start mt-6">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="px-6 py-3 text-lg text-white bg-[#2506ad] rounded-lg hover:bg-[#421cecf5] shadow-lg shadow-blue-600/40 transition-all duration-300 font-nunito group disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? (
+            <div className="flex items-center">
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Sending...
             </div>
+          ) : (
+            <>
+              Submit{" "}
+              <FaPaperPlane className="inline-block ml-2 group-hover:translate-x-2 transition-transform" />
+            </>
+          )}
+        </button>
+      </div>
           </form>
         </div>
       </div>

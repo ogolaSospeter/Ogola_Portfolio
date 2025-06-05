@@ -107,7 +107,7 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
 
   // Link styling for desktop and mobile
   const getLinkClassName = (href: string, isMobile: boolean = false) => `
-    text-lg font-medium tracking-wide transition-all duration-200
+    text-md font-small tracking-wide transition-all duration-200
     ${
       isMobile
         ? `block px-4 py-2 hover:text-blue-500 hover:bg-gray-800 ${
@@ -115,7 +115,7 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
               ? "text-blue-500 bg-gray-800"
               : ""
           }`
-        : `relative px-3 py-2 hover:text-blue-500 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ${
+        : `relative px-2 py-2 hover:text-blue-500 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ${
             activeSection === href.split("#")[1]
               ? "text-blue-500 after:scale-x-100"
               : ""
@@ -148,9 +148,9 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
 
           {/* Desktop Navigation Menu */}
           <nav className="hidden md:block">
-            <ul className="flex items-center md:gap-4 lg:gap-12">
+            <ul className="md:flex items-center space-x-1">
               {navItems.map((item, index) => (
-                <li key={index}>
+                <li key={index} className="text-sm font-small">
                   <Link
                     href={item.href}
                     onClick={(e) => handleSmoothScroll(e, item.href)}
@@ -170,7 +170,7 @@ const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string
         className={`fixed top-20 left-0 w-full bg-gray-900 text-white transform transition-transform duration-300 ease-in-out md:hidden z-40
         ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <ul className="flex flex-col p-6 bg-gray-900">
+        <ul className="flex flex-col p-3 bg-gray-900">
           {navItems.map((item, index) => (
             <li key={index} className="my-2">
               <Link
