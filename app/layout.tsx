@@ -7,34 +7,36 @@ import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 import ScrollToTop from "@/components/ScrollToTop";
 
-// Configure fonts
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Added 500 for better text scaling
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   display: "swap",
 });
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], // Added 500 for better text scaling
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-nunito",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Ogola Sospeter",
+  title: "Ogola Sospeter | Software Engineer & AI Researcher",
   description:
-    "Welcome to Ogola Sospeter Portfolio. Full-Stack Web Developer and Android App Developer",
+    "Portfolio of Ogola Sospeter — Software Engineer, Full-Stack Developer, Android Developer, and aspiring AI Researcher focused on Healthcare Innovation in Africa.",
   keywords: [
     "Ogola Sospeter",
     "portfolio",
-    "Ogola",
-    "full stack dev",
-    "personal portfolio",
-    "lifecodes",
-    "portfolio design",
-    "portfolio website",
+    "software engineer",
+    "AI researcher",
+    "healthcare AI",
+    "machine learning",
+    "full stack developer",
+    "Kenya",
+    "Africa",
+    "JKUAT",
+    "Android developer",
   ],
   icons: {
     icon: "/favhand.jpg",
@@ -46,12 +48,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Include FontAwesome for icons */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -62,24 +62,23 @@ export default function RootLayout({
       </head>
       <body
         className={`
-          ${poppins.variable} 
-          ${nunito.variable} 
-          bg-gray-100 
+          ${poppins.variable}
+          ${nunito.variable}
+          bg-white
           text-gray-900
           min-h-screen
           flex
           flex-col
           overflow-x-hidden
           text-base
-          md:text-lg
           selection:bg-blue-500/20
         `}
       >
         <DisableRightClick />
         <Navbar />
-        <FloatingContact/>
-        <ScrollToTop/>
-        <main className="flex-grow">{children}</main>
+        <FloatingContact />
+        <ScrollToTop />
+        <main className="flex-grow pt-[68px]">{children}</main>
         <Footer />
       </body>
     </html>
