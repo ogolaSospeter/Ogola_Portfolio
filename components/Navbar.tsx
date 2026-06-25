@@ -102,6 +102,7 @@ export default function Navbar() {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white shadow-sm"}`}>
+        {/* Top bar */}
         <div className="flex items-center justify-between px-6 md:px-10 py-4 max-w-7xl mx-auto">
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity duration-200">
             <div className="relative w-10 h-10 flex-shrink-0">
@@ -142,30 +143,32 @@ export default function Navbar() {
             </ul>
           </nav>
         </div>
-      </header>
 
-      <nav
-        className={`fixed top-[68px] left-0 w-full bg-gray-900 transform transition-transform duration-300 ease-in-out md:hidden z-40
-        ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
-      >
-        <ul className="grid grid-cols-3 p-3 gap-1">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <Link
-                href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
-                className={getLinkClassName(item.href, true)}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        {/* Mobile dropdown — inside header so it always sits flush below it */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}
+        >
+          <nav className="bg-gray-900 border-t border-gray-800">
+            <ul className="grid grid-cols-3 p-3 gap-1">
+              {navItems.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    href={item.href}
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
+                    className={getLinkClassName(item.href, true)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </header>
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-30 md:hidden"
+          className="fixed inset-0 bg-black/40 z-40 md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
