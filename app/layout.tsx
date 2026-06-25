@@ -76,9 +76,9 @@ export default function RootLayout({
       >
         <DisableRightClick />
         <Navbar />
-        <FloatingContact />
+        {/* <FloatingContact /> */}
         <ScrollToTop />
-        <main className="flex-grow pt-[120px]">{children}</main>
+        <main className="flex-grow pt-[72px] md:pt-[120px]">{children}</main>
         <Footer />
       </body>
     </html>

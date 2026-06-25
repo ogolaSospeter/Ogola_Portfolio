@@ -103,7 +103,7 @@ export default function Navbar() {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white shadow-sm"}`}>
         {/* Top bar */}
-        <div className="flex items-center justify-between px-6 md:px-10 py-12 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between px-6 md:px-10 py-3 md:py-12 max-w-7xl mx-auto">
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity duration-200">
             <div className="relative w-10 h-10 flex-shrink-0">
               <Image
