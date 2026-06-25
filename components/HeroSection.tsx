@@ -107,7 +107,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden min-h-screen bg-gradient-to-br from-[#f8f9ff] via-white to-[#f0f4ff]"
+      className="relative flex items-center justify-center overflow-hidden min-h-screen bg-gradient-to-br from-[#f8f9ff] via-white to-[#f0f4ff] pt-[102px] md:pt-0"
       id="home"
     >
       {/* Network nodes canvas */}
