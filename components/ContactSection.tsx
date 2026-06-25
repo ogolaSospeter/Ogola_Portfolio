@@ -10,7 +10,7 @@ import {
   FaCommentDots,
   FaPaperPlane,
 } from "react-icons/fa";
-import { init, sendForm } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,22 +28,17 @@ const ContactSection = () => {
           duration: 1000,
           reset: true,
         });
-
         sr.reveal(".contact .container", { delay: 400 });
         sr.reveal(".contact .container .form-group", { delay: 400 });
       }
     };
-    let timer: NodeJS.Timeout;
-    if (showAlert) {
-      timer = setTimeout(() => {
-        setShowAlert(false);
-      }, 3000);
-    }
-    return () => {
-      if (timer) clearTimeout(timer);
-    };
-
     initScrollReveal();
+  }, []);
+
+  useEffect(() => {
+    if (!showAlert) return;
+    const timer = setTimeout(() => setShowAlert(false), 3000);
+    return () => clearTimeout(timer);
   }, [showAlert]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -78,19 +73,16 @@ const ContactSection = () => {
         setIsSubmitting(false);
         return;
       }
-      init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
-
-      const response = await sendForm(
+      const response = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         e.currentTarget as HTMLFormElement,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
       );
-      
+
       if (response.status === 200) {
         setAlertType("success");
-        setAlertMessage("Thank you for leaving us a message. We will get back to you soon! Keep an eye on your inbox.");
-        
+        setAlertMessage("Thank you for your message. We will get back to you soon! Keep an eye on your inbox.");
         (e.target as HTMLFormElement).reset();
       }
     } catch (error) {
