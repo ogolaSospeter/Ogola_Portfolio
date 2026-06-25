@@ -1,13 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 export default function HeroSection() {
+  const [particlesReady, setParticlesReady] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => setParticlesReady(true));
+  }, []);
+
   const [typeEffect] = useTypewriter({
     words: [
       "AI for Healthcare Innovation",
@@ -46,7 +56,46 @@ export default function HeroSection() {
       className="relative flex items-center justify-center overflow-hidden min-h-screen bg-gradient-to-br from-[#f8f9ff] via-white to-[#f0f4ff]"
       id="home"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(#e0e7ff_1px,transparent_1px)] [background-size:32px_32px] opacity-50 pointer-events-none" />
+      {/* Network nodes background */}
+      {particlesReady && <Particles
+        id="hero-particles"
+        className="absolute inset-0 z-0"
+        options={{
+          fullScreen: { enable: false },
+          background: { color: { value: "transparent" } },
+          fpsLimit: 60,
+          particles: {
+            number: { value: 80, density: { enable: true } },
+            color: { value: "#a5b4fc" },
+            links: {
+              enable: true,
+              color: "#c7d2fe",
+              distance: 140,
+              opacity: 0.5,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1.2,
+              outModes: { default: "bounce" },
+            },
+            opacity: { value: 0.5 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 3 } },
+          },
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: "repulse" },
+              onClick: { enable: true, mode: "push" },
+            },
+            modes: {
+              repulse: { distance: 100 },
+              push: { quantity: 3 },
+            },
+          },
+          detectRetina: true,
+        }}
+      />}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 md:px-10 text-center md:text-left">
         <div className="py-12 flex flex-col-reverse md:flex-row items-center gap-10 sm:gap-14 md:gap-16">
           <div className="flex-1 space-y-5">
