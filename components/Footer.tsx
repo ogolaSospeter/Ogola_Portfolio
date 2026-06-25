@@ -17,17 +17,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* About Section */}
         <div className="text-center md:text-left">
-          <h3 className="text-[clamp(1.5rem,2vw,2rem)] text-white pb-4 font-semibold">
+          <h3 className="text-base text-white pb-4 font-semibold">
             Developer Ogola Portfolio
           </h3>
-          <p className="text-[clamp(1rem,1.2vw,1.3rem)] text-gray-300">
+          <p className="text-sm text-gray-300">
             Thank you for visiting my personal portfolio website. Let&apos;s connect!
           </p>
         </div>
 
         {/* Quick Links */}
         <div className="text-center md:text-left">
-          <h3 className="text-[clamp(1.5rem,2vw,2rem)] text-white pb-4 font-semibold">
+          <h3 className="text-base text-white pb-4 font-semibold">
             Quick Links
           </h3>
           <div className="grid grid-cols-3 gap-y-6">
@@ -42,7 +42,7 @@ const Footer = () => {
               <Link
                 key={index}
                 href={link.href}
-                className="text-[clamp(1rem,1.2vw,1.3rem)] text-gray-300 hover:text-[#ffae00] transition-all flex items-center justify-center md:justify-start"
+                className="text-sm text-gray-300 hover:text-[#ffae00] transition-all flex items-center justify-center md:justify-start"
               >
                 <FaChevronCircleRight className="mr-2" />
                 {link.text}
@@ -53,18 +53,18 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div className="text-center md:text-left">
-          <h3 className="text-[clamp(1.5rem,2vw,2rem)] text-white pb-4 font-semibold">
+          <h3 className="text-base text-white pb-4 font-semibold">
             Contact Info
           </h3>
           <div className="space-y-2">
-            <p className="text-[clamp(1rem,1.2vw,1.3rem)] text-gray-300 flex items-center justify-center md:justify-start">
+            <p className="text-sm text-gray-300 flex items-center justify-center md:justify-start">
               <FaPhone className="mr-2 text-[#ffae00]" /> +254 7XX-XXX-XXX
             </p>
-            <p className="text-[clamp(1rem,1.2vw,1.3rem)] text-gray-300 flex items-center justify-center md:justify-start">
+            <p className="text-sm text-gray-300 flex items-center justify-center md:justify-start">
               <FaEnvelope className="mr-2 text-[#ffae00]" />{" "}
               ogolasospeter62@gmail.com
             </p>
-            <p className="text-[clamp(1rem,1.2vw,1.3rem)] text-gray-300 flex items-center justify-center md:justify-start">
+            <p className="text-sm text-gray-300 flex items-center justify-center md:justify-start">
               <FaMapMarkerAlt className="mr-2 text-[#ffae00]" /> Nairobi,
               Kenya-00200
             </p>
@@ -112,11 +112,11 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className="mt-8 text-center text-gray-400">
-        <p className="text-[clamp(0.9rem,1.1vw,1.2rem)]">
+        <p className="text-xs">
           Ogola Sospeter Portfolio
         </p>
-        <p className="text-[clamp(0.9rem,1.1vw,1.2rem)] italic">
-          © 2025 All rights reserved.
+        <p className="text-xs italic">
+          © 2026 All rights reserved.
         </p>
       </div>
     </footer>
