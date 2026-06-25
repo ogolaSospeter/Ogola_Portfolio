@@ -114,7 +114,7 @@ export default function HeroSection() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 md:px-10 text-center md:text-left">
-        <div className="pt-2 pb-6 sm:py-12 flex flex-col-reverse md:flex-row items-center gap-4 sm:gap-14 md:gap-16">
+        <div className="pt-0 pb-4 sm:py-12 flex flex-col-reverse md:flex-row items-center gap-4 sm:gap-14 md:gap-16">
           <div className="flex-1 space-y-5">
             <div className="hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold tracking-wide w-fit mx-auto md:mx-0">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
