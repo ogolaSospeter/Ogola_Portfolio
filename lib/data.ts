@@ -182,15 +182,15 @@ export const skillsData = [
 },
 {
     "name": "TensorFlow",
-    "icon": "/skills/tensorflow.png"
+    "icon": "/skills/tensorflow.svg"
 },
 {
     "name": "PyTorch",
-    "icon": "/skills/pytorch.png"
+    "icon": "/skills/pytorch.svg"
 },
 {
     "name": "Scikit-learn",
-    "icon": "/skills/scikitlearn.png"
+    "icon": "/skills/scikitlearn.svg"
 },
 {
     "name": "Flutter",
@@ -210,15 +210,15 @@ export const skillsData = [
 },
 {
     "name": "React",
-    "icon": "/skills/react.png"
+    "icon": "/skills/react.svg"
 },
 {
     "name": "Next.js",
-    "icon": "/skills/nextjs.png"
+    "icon": "/skills/nextjs.svg"
 },
 {
     "name": "TypeScript",
-    "icon": "/skills/typescript.png"
+    "icon": "/skills/typescript.svg"
 },
 {
     "name": "MaterialUI",
@@ -250,7 +250,7 @@ export const skillsData = [
 },
 {
     "name": "Docker",
-    "icon": "/skills/docker.png"
+    "icon": "/skills/docker.svg"
 },
 {
     "name": "Git VCS",
