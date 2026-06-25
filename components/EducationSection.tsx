@@ -68,13 +68,14 @@ export default function EducationSection() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {educationData.map((edu, index) => (
           <div
             key={index}
-            className="education-item bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-100 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row gap-0"
+            className="education-item bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-100 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
           >
-            <div className="relative w-full sm:w-44 h-40 sm:h-auto flex-shrink-0">
+            {/* Full-width image banner */}
+            <div className="relative w-full h-48">
               <Image
                 src={edu.image}
                 alt={edu.school}
@@ -82,16 +83,22 @@ export default function EducationSection() {
                 className="object-cover"
                 draggable={false}
               />
+              {/* Subtle gradient overlay at bottom for readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
-            <div className="flex flex-col justify-center p-5 sm:p-6">
-              <h3 className="text-base sm:text-lg font-bold text-[#012970] mb-1 leading-snug">
-                {edu.title}
-              </h3>
-              <p className="text-sm text-gray-500 mb-3">
-                {edu.school}
-              </p>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-sm font-semibold text-gray-700">{edu.period}</span>
+
+            {/* Text content */}
+            <div className="flex flex-col justify-between flex-1 p-5">
+              <div>
+                <h3 className="text-sm sm:text-base font-bold text-[#012970] mb-1 leading-snug">
+                  {edu.title}
+                </h3>
+                <p className="text-xs text-gray-500 mb-3">
+                  {edu.school}
+                </p>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap mt-auto">
+                <span className="text-xs font-semibold text-gray-700">{edu.period}</span>
                 <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full ${edu.status.color}`}>
                   <FaCheckCircle className="text-xs" />
                   {edu.status.text}
