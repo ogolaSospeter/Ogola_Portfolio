@@ -53,7 +53,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden min-h-screen bg-[#09011b]"
+      className="relative flex items-center justify-center overflow-hidden min-h-screen bg-gradient-to-br from-[#f8f9ff] via-white to-[#f0f4ff]"
       id="home"
     >
       {/* Network nodes background */}
@@ -65,32 +65,32 @@ export default function HeroSection() {
           background: { color: { value: "transparent" } },
           fpsLimit: 60,
           particles: {
-            number: { value: 120, density: { enable: true } },
-            color: { value: "#00d9ff" },
+            number: { value: 80, density: { enable: true } },
+            color: { value: "#a5b4fc" },
             links: {
               enable: true,
-              color: "#00d9ff",
-              distance: 150,
-              opacity: 0.4,
+              color: "#c7d2fe",
+              distance: 140,
+              opacity: 0.5,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 1.5,
+              speed: 1.2,
               outModes: { default: "bounce" },
             },
-            opacity: { value: 0.8 },
+            opacity: { value: 0.5 },
             shape: { type: "circle" },
-            size: { value: { min: 2, max: 4 } },
+            size: { value: { min: 1, max: 3 } },
           },
           interactivity: {
             events: {
-              onHover: { enable: true, mode: "grab" },
+              onHover: { enable: true, mode: "repulse" },
               onClick: { enable: true, mode: "push" },
             },
             modes: {
-              grab: { distance: 180, links: { opacity: 1 } },
-              push: { quantity: 4 },
+              repulse: { distance: 100 },
+              push: { quantity: 3 },
             },
           },
           detectRetina: true,
@@ -99,35 +99,35 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 md:px-10 text-center md:text-left">
         <div className="py-12 flex flex-col-reverse md:flex-row items-center gap-10 sm:gap-14 md:gap-16">
           <div className="flex-1 space-y-5">
-            <div className="hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#00d9ff]/30 text-[#00d9ff] text-sm font-semibold tracking-wide w-fit mx-auto md:mx-0">
-              <span className="w-2 h-2 rounded-full bg-[#00d9ff] animate-pulse" />
+            <div className="hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-semibold tracking-wide w-fit mx-auto md:mx-0">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               Open to AI Research Collaborations
             </div>
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a0f2e] leading-tight">
               Hi, I&apos;m{" "}
-              <span className="text-[#00d9ff]">Ogola</span>{" "}
+              <span className="text-[#002057]">Ogola</span>{" "}
               <span className="text-[#ff7b00]">Sospeter.</span>
             </h1>
-            <div className="hero-subtitle text-lg sm:text-xl md:text-2xl font-semibold text-gray-300">
+            <div className="hero-subtitle text-lg sm:text-xl md:text-2xl font-semibold text-gray-600">
               I work in{" "}
-              <span className="text-[#ff7b00] font-bold">{typeEffect}</span>
+              <span className="text-[#940808] font-bold">{typeEffect}</span>
               <Cursor cursorStyle="|" />
             </div>
-            <p className="hero-subtitle text-sm sm:text-base text-gray-400 max-w-md mx-auto md:mx-0 leading-relaxed">
+            <p className="hero-subtitle text-sm sm:text-base text-gray-500 max-w-md mx-auto md:mx-0 leading-relaxed">
               Software Engineer &amp; aspiring AI Researcher &mdash; focused on building intelligent systems
               for healthcare innovation in Africa and beyond.
             </p>
             <div className="hero-btn flex flex-wrap gap-3 justify-center md:justify-start pt-2">
               <Link
                 href="#about"
-                className="inline-flex items-center px-6 py-3 bg-[#00d9ff] text-[#09011b] rounded-full text-sm font-bold shadow-lg shadow-[#00d9ff]/30 hover:bg-white hover:shadow-white/30 hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 bg-[#002057] text-white rounded-full text-sm font-semibold shadow-lg shadow-[#002057]/20 hover:bg-[#0033a0] hover:shadow-[#002057]/40 hover:scale-105 transition-all duration-300"
               >
                 About Me
                 <i className="fas fa-arrow-circle-down ml-2" />
               </Link>
               <Link
                 href="#research"
-                className="inline-flex items-center px-6 py-3 bg-transparent text-[#00d9ff] border border-[#00d9ff]/50 rounded-full text-sm font-semibold hover:bg-[#00d9ff]/10 hover:border-[#00d9ff] hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 bg-white text-[#002057] border border-[#002057]/20 rounded-full text-sm font-semibold shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300"
               >
                 AI Research Focus
               </Link>
@@ -144,7 +144,7 @@ export default function HeroSection() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-11 h-11 rounded-full flex items-center justify-center bg-white/10 text-[#00d9ff] border border-[#00d9ff]/30 transition-all duration-300 ${social.hoverBg} hover:text-white hover:scale-110 hover:border-transparent hover:shadow-md`}
+                  className={`w-11 h-11 rounded-full flex items-center justify-center bg-gray-100 text-gray-700 border border-gray-200 transition-all duration-300 ${social.hoverBg} hover:text-white hover:scale-110 hover:border-transparent hover:shadow-md`}
                   aria-label={social.label}
                 >
                   <social.icon className="text-xl" />
@@ -154,14 +154,14 @@ export default function HeroSection() {
           </div>
           <div className="hero-image flex-1 flex justify-center items-center pb-6 md:pb-0">
             <div className="relative">
-              <div className="absolute -inset-3 rounded-[2.5rem] bg-[#00d9ff]/20 blur-md" />
+              <div className="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-blue-100 to-orange-100 opacity-70 blur-sm" />
               <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px] transition-transform duration-300 hover:scale-105">
                 <Image
                   src="/profile2.jpg"
                   alt="Ogola Sospeter"
                   fill
                   priority
-                  className="object-cover rounded-[2rem] shadow-2xl shadow-[#00d9ff]/20"
+                  className="object-cover rounded-[2rem] shadow-2xl"
                   draggable={false}
                 />
               </div>
