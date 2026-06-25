@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { FaPython, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
   { name: "Home", href: "/#home" },
@@ -102,12 +103,20 @@ export default function Navbar() {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white shadow-sm"}`}>
         <div className="flex items-center justify-between px-6 md:px-10 py-4 max-w-7xl mx-auto">
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-lg font-bold text-gray-900 transition-colors duration-200 hover:text-[#002057]"
-          >
-            <FaPython className="text-2xl text-[#002057] transition-colors duration-200" />
-            Ogola<span className="text-[#ff7b00]">.S</span>
+          <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity duration-200">
+            <div className="relative w-10 h-10 flex-shrink-0">
+              <Image
+                src="/profile2.jpg"
+                alt="Ogola Sospeter"
+                fill
+                className="object-cover rounded-full border-2 border-[#002057]/20"
+                draggable={false}
+              />
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-bold text-gray-900">Ogola Sospeter <span className="text-[#ff7b00]">O.</span></span>
+              <span className="text-[10px] text-gray-500 font-medium tracking-wide">Software Eng. | Computer Scientist</span>
+            </div>
           </Link>
 
           <button
@@ -118,9 +127,9 @@ export default function Navbar() {
           </button>
 
           <nav className="hidden md:block">
-            <ul className="flex items-center gap-1">
+            <ul className="flex items-center flex-wrap gap-x-0 gap-y-0">
               {navItems.map((item, index) => (
-                <li key={index}>
+                <li key={index} className="flex-shrink-0">
                   <Link
                     href={item.href}
                     onClick={(e) => handleSmoothScroll(e, item.href)}
@@ -139,7 +148,7 @@ export default function Navbar() {
         className={`fixed top-[68px] left-0 w-full bg-gray-900 transform transition-transform duration-300 ease-in-out md:hidden z-40
         ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <ul className="flex flex-col p-4 gap-1">
+        <ul className="grid grid-cols-3 p-3 gap-1">
           {navItems.map((item, index) => (
             <li key={index}>
               <Link
